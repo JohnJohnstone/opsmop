@@ -136,6 +136,9 @@ class PlatformFacts(Facts):
         elif shutil.which("apt"):
             from opsmop.providers.package.apt import Apt
             return Apt
+        elif shutil.which("pacman"):
+            from opsmop.providers.package.pacman import Pacman
+            return Pacman
         return None
 
     def default_service_manager(self):
